@@ -28,14 +28,16 @@ class TestCalendar {
 		assertEquals(expected, actual);
 	}
 
-	/*
 	@ParameterizedTest
-	@ValueSource()
+	@ValueSource(ints = {-10, 1999, 1600, 1900, 1996})
 	public void Should_return_if_year_is_leap(int year) {
 		// Implement
-	 */
-
-	
+		GregorianCalendar g = new GregorianCalendar();
+		Calendar c = new Calendar(year);
+		boolean expected = g.isLeapYear(year);
+		boolean actual = c.isLeapYear();
+		assertEquals(expected, actual);
+	}
 
 
 	// Create a new method for boundary testing
